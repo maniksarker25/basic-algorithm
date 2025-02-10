@@ -5,26 +5,20 @@ bool vis[100];
 vector<int>adj_list[105];
 int parent_array[105];
 bool isCycle;
-void bfs(int src){
-    queue<int>q;
-    q.push(src);
-    vis[src] = true;
 
-    while(!q.empty()){
-        int parent = q.front();
-        q.pop();
-        for(int child : adj_list[parent]){
-            if(vis[child] && parent_array[parent] != child){
-                isCycle = true;
-            }
-            if(vis[child] == false){
-                q.push(child);
-                vis[child] = true;
-                parent_array[child] = parent;
-            }
-        }
 
+
+void dfs(int src){
+   vis[src] = true;
+   for(int child : adj_list[src]){
+    if(vis[child] && parent_array[src] != child){
+        isCycle = true;
     }
+    if(!vis[child]){
+        dfs(child);
+        parent_array[child] = src;
+    }
+   }
 }
 
 int main()
@@ -43,7 +37,7 @@ int main()
     isCycle = false;
     for(int i = 0;i<n;i++){
         if(!vis[i]){
-            bfs(i);
+            dfs(i);
         }
     }
     if(isCycle){
