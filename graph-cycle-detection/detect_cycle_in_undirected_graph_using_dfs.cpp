@@ -15,8 +15,8 @@ void dfs(int src){
         isCycle = true;
     }
     if(!vis[child]){
-        dfs(child);
         parent_array[child] = src;
+        dfs(child);
     }
    }
 }
