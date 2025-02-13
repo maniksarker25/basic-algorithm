@@ -9,7 +9,7 @@ int main()
     {
         int a,b,c;
         cin >> a >>b >>c;
-        adj_list[a].push_back({b,c});
+                    adj_list[a].push_back({b,c});
         adj_list[b].push_back({a,c});
     }
 
