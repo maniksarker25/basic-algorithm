@@ -45,7 +45,7 @@ int main()
         }
     }
 
-    // detech negitive weigthed cycle
+    // detech negitive weigthed cycle------
     bool cycle = false;
 
     for (int i = 0; i < n; i++)
