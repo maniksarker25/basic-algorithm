@@ -2,7 +2,7 @@
 using namespace std;
 int parent[1005];
 
-int find(int node) // order of n => 0(n)
+int find(int node)
 {
     // use recursion
     if (parent[node] == -1)
@@ -10,8 +10,6 @@ int find(int node) // order of n => 0(n)
         return node;
     }
     int leader = find(parent[node]);
-    // save the node of leader for optimization
-    parent[node] = leader;
     return leader;
 }
 
@@ -29,11 +27,6 @@ int main()
     parent[5] = 3;
 
     cout << find(4) << endl;
-
-    // for (int i = 0; i < 6; i++)
-    // {
-    //     cout << i << ' ' << parent[i] << endl;
-    // }
 
     return 0;
 }
