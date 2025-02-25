@@ -2,14 +2,14 @@
 using namespace std;
 int parent[1005];
 
-int find(int node) // order of n => 0(n)
+int dsu_find(int node) // order of n => 0(n)
 {
     // use recursion
     if (parent[node] == -1)
     {
         return node;
     }
-    int leader = find(parent[node]);
+    int leader = dsu_find(parent[node]);
     // save the node of leader for optimization
     parent[node] = leader;
     return leader;
@@ -28,7 +28,7 @@ int main()
     parent[4] = 5;
     parent[5] = 3;
 
-    cout << find(4) << endl;
+    cout << dsu_find(4) << endl;
 
     // for (int i = 0; i < 6; i++)
     // {
