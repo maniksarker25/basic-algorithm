@@ -2,6 +2,8 @@
 using namespace std;
 int parent[1005];
 int group_size[1005];
+
+// dsu find
 int dsu_find(int node)
 {
     if (parent[node] == -1)
@@ -12,7 +14,7 @@ int dsu_find(int node)
     return leader;
 }
 
-// union
+// union by size----------------
 
 void dsu_union(int node_1, int node_2)
 {
