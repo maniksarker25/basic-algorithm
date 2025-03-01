@@ -42,16 +42,14 @@ void bfs(int si, int sj)
 
 int main()
 {
-    cin >> n;
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < n; j++)
-            cin >> grid[i][j];
-
     int si, sj, di, dj;
+   while (cin >>n)
+   {
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
+            cin >> grid[i][j];
             if (grid[i][j] == 'S')
             {
                 si = i;
@@ -68,5 +66,7 @@ int main()
     memset(level, -1, sizeof(level));
     bfs(si, sj);
     cout << level[di][dj] << endl;
+   }
+   
     return 0;
 }
