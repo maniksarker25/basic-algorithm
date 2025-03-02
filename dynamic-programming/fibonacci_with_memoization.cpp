@@ -20,6 +20,8 @@ int fibo(int n)
 int main()
 {
     memset(dp, -1, sizeof(dp));
-    cout << fibo(9) << endl;
+    int n;
+    cin >> n;
+    cout << fibo(n) << endl;
     return 0;
 }
